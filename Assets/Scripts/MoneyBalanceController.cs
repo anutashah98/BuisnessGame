@@ -17,7 +17,7 @@ namespace DefaultNamespace
             return amount <= Money;
         }
         
-        private void AddMoney(int amount) {
+        public void AddMoney(int amount) {
             Money += amount;
         }
 

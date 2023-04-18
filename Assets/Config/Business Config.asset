@@ -9,13 +9,37 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d8ef1e71622f4548aba9a70753bf483e, type: 3}
+  m_Script: {fileID: 11500000, guid: d52a97e1ec2948ddba8084c91479f755, type: 3}
   m_Name: Business Config
   m_EditorClassIdentifier: 
-  BusinessName: 
-  Update1: 0
-  Update2: 0
-  UpdateCost1: 0
-  UpdateCost2: 0
-  UpdateIncome: 0
-  delay: 0
+  _businessConfigs:
+  - _businesNames: 0
+    _level: 1
+    _Update1: 0
+    _Update2: 0
+    _costUpdate1: 0
+    _costUpdate2: 0
+  - _businesNames: 1
+    _level: 0
+    _Update1: 0
+    _Update2: 0
+    _costUpdate1: 0
+    _costUpdate2: 0
+  - _businesNames: 2
+    _level: 0
+    _Update1: 0
+    _Update2: 0
+    _costUpdate1: 0
+    _costUpdate2: 0
+  - _businesNames: 3
+    _level: 0
+    _Update1: 0
+    _Update2: 0
+    _costUpdate1: 0
+    _costUpdate2: 0
+  - _businesNames: 4
+    _level: 0
+    _Update1: 0
+    _Update2: 0
+    _costUpdate1: 0
+    _costUpdate2: 0

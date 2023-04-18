@@ -11,6 +11,7 @@ namespace DefaultNamespace
 
         private void OnClickButtonUpgrade1()
         {
+            
         }
     }
 }
