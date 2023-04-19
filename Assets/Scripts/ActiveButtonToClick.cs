@@ -13,7 +13,7 @@ public class ActiveButtonToClick : MonoBehaviour
         currentBalanceText.text = currentBalance + currency;
     }
 
-    public void GenerateFlasks()
+    public void GenerateBalance()
     {
         currentBalance += moneyPerClick;
     }
