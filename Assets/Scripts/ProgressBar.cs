@@ -1,39 +1,38 @@
+using TMPro;
 using UnityEngine;
+using UnityEngine.Serialization;
 using UnityEngine.UI;
 
 namespace DefaultNamespace
 {
     public class ProgressBar : MonoBehaviour
     {
-        [SerializeField] private Slider slider;
-        [SerializeField] private float delaySecond = 3f;
+        private TextMeshProUGUI _levelText;
+        [SerializeField] private Slider _slider; // вынести в BusinessModel для каждого префаба
+        [SerializeField] private float _delaySecond = 3f; // перенести в конфиг для выбора времени каждому префабy(delayIncome)
 
-        private float _minProgressValue = 0.014f;
-        private float _maxProgressValue = 0.99f;
-        private float _progressSpeed = 1.0f;
+        private float minProgressValue = 0.014f;
+        private float maxProgressValue = 0.99f;
+        private float progressSpeed = 1.0f;
         private float Level = 1f; // привязка к лвл 
         
         private void Update()
         {
-            slider.value = _minProgressValue;
+            _slider.value = minProgressValue;
             
-            if (_minProgressValue < _maxProgressValue && Level >=1)
+            if (minProgressValue < maxProgressValue && Level >=1)
             {
-                var speed = _progressSpeed/ delaySecond;
-                _minProgressValue += speed * Time.deltaTime;
-                _minProgressValue = Mathf.Clamp01(_minProgressValue);
+                var speed = progressSpeed/ _delaySecond;
+                minProgressValue += speed * Time.deltaTime;
+                minProgressValue = Mathf.Clamp01(minProgressValue);
             }
             else if(Level >= 1)
             {
-                _minProgressValue = 0.014f;
-                // добавить баланс
+                minProgressValue = 0.014f;
+                
+                // baseIncome(значение в панели) прибавить к Money(баланс)
+                // Money += baseIncome;
             }
         }
     }
 }
-
-/* delaySecond перенести в конфиг для выбора времени каждому префабу
- 
- при повторении SliderValue() к чему-то доб сумма от панели и она передает общую сумму(сумма за лв и улучшения) к балансу
- 
-*/
